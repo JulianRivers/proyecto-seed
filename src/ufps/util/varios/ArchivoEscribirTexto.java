@@ -1,5 +1,6 @@
 package ufps.util.varios;
 import java.io.*;
+//https://gitlab.com/estructuras-de-datos/proyecto-seed.git
 public class ArchivoEscribirTexto
 {
 	

@@ -6,6 +6,8 @@
 package ufps.vistas;
 import java.util.Iterator;
 import ufps.util.colecciones_seed.*;
+import ufps.util.varios.graficador.BTreePrinter;
+
 
 /**
  *
@@ -84,8 +86,10 @@ public class Test_Algunas_Estructuras {
             System.out.print(it.next()+"\t");
         }
         
+        t.imprimeABB(t.getRaiz());
+        
+        BTreePrinter.printNode(t.getRaiz());
     }
     
-    
-    
+
 }

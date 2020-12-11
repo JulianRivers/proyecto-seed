@@ -22,8 +22,8 @@ public class TestEmail {
      * Para ejecutar el ejercicio debe descargar javamail.jar  y copiar en el lib "mail.jar"
      * 
      */
-    
-    
+   
+  
     public static void main(String args[])
     {
         String emailUsuarioEmisor="ejemplo.email.ufps@gmail.com";

@@ -16,7 +16,7 @@ package ufps.util.colecciones_seed;
  * @author Marco Adarme
  * @version 2.0
  */
-class NodoBin<T>{
+public class NodoBin<T>{
     
     ////////////////////////////////////////////////////////////
     // NodoBin - Atributos /////////////////////////////////////
