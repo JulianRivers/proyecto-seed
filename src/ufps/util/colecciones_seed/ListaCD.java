@@ -12,10 +12,10 @@ package ufps.util.colecciones_seed;
 import java.util.Iterator;
  
  /**
- * Implementacion de Clase Para el manejo de una Lista Circular Doble Enlazada<T>.
+ * Implementación de clase para el manejo de una Lista Circular Doble Enlazada<T>.
  * @param <T> Tipo de datos a almacenar en la Lista Circular Doble Enlazada.
  * @author Marco Adarme
- * @version 2.0
+ * @version 2.1, Diciembre/2020 se crea el método getPos_optimizado para búsquedas dependiendo de la ubicación a buscar en la ListaCD
  */
 public class ListaCD <T> implements Iterable<T>
 {
@@ -274,6 +274,40 @@ public class ListaCD <T> implements Iterable<T>
         }
      
     }
+    
+    /**
+     * Metodo de tipo private, que retorna un nodo con la posicion de este en la
+     * lista y ejecuta una exception si sucede un error. <br>
+     * Utiliza la estrategia de validar la posición para realizar la búsqueda por la izquierda o 
+     * por la derecha. 
+     * @author Jeison Omar Ferrer Ortega (jeisonomarfort@ufps.edu.co)
+     * @param i es de tipo integer y contiene la posicion del elemento en la lista. <br>
+     * @return un tipo NodoD<T> con el nodo de la posicion
+     */
+    @SuppressWarnings("empty-statement")
+    private NodoD<T> getPos_optimizado(int pos)throws ExceptionUFPS{
+       if (pos >= 0 && pos < this.tamanio) {
+        } else {
+           throw new ExceptionUFPS("La posición " + pos + " No es válida en la lista");      
+        }
+        //EL METODO SE PRUEBA EL LA CLASE TestGetPostListaCD DE LA VISTA
+        NodoD<T> nodoPos;
+        if (pos >= (this.tamanio) / 2) {
+            pos = this.tamanio- 1 - pos; 
+            nodoPos = this.cabeza.getAnt();
+            while (pos-- > 0) {
+                nodoPos = nodoPos.getAnt();
+            }
+        } else {
+            nodoPos = this.cabeza.getSig();
+            while (pos-- > 0) {
+                nodoPos = nodoPos.getSig();
+            }
+        }
+        return nodoPos;
+   
+    }
+    
 
     /**
      * Metodo que busca un elemento de la lista y devuelve su posicion.Los objetos

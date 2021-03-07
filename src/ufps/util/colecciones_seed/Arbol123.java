@@ -162,7 +162,7 @@ public class Arbol123 <T>{
      * Metodo que permite eliminar un dato del Arbol1-2-3; manteniendo el Arbol sus propiedades de ordenamiento. <br>
      * <b>post: </b> Se elimino un elemento del Arbol1-2-3 y este ha mantenido sus propiedades.
      * @param dato Representa el Objeto de tipo T que se desea eliminar del Arbol.
-     * @return  
+     * @return  true si el dato existe en la arbol
      */
     public boolean eliminar(T dato){
         if(this.esVacio() || !this.esta(dato))
@@ -330,9 +330,9 @@ public class Arbol123 <T>{
     
     /**
      * Metodo que permite buscar un dato dentro del Arbol 1-2-3 y retornar el Nodo que lo contiene. <br>
-     * <b>post: </b> Se retorno el Nodo123<T> que representa la ubicacion del dato en el Arbol. <br>
+     * <b>post: </b> Se retorno el Nodo123 <T> que representa la ubicacion del dato en el Arbol. <br>
      * @param dato Representa el dato que se quiere localizar dentro del Arbol 1-2-3. <br>
-     * @return Un objeto de tipo Nodo123<T> que representa la ubicacion del dato dentro del Arbol.
+     * @return Un objeto de tipo Nodo123 <T> que representa la ubicacion del dato dentro del Arbol.
      */
     public Nodo123<T> buscar(T dato){
         if(this.esVacio())
