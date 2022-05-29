@@ -114,7 +114,7 @@ public class ArbolBinarioBusqueda <T> extends ArbolBinario<T> {
       * se coloque en una hoja o en un nodo que no tenga una de sus ramas. <br>
       * <b>post: </b> Se elimino el elemento Arbol Binario de Busqueda. <br>
       * @param r de tipo NoboBin<T> que representa la raiz del arbol. <br>
-      * @param dato elemento que se desea eliminar del arbol. <br>
+      * @param x elemento que se desea eliminar del arbol. <br>
       * @return el dato borrado o null si no lo encontro
       */
     private NodoBin<T> eliminarABB(NodoBin<T> r, T x){

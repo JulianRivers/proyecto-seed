@@ -72,20 +72,21 @@ public class ArbolRojiNegro<T> extends ArbolBinarioBusqueda<T>{
      * @return  true si el elemento fue insertado o false en caso contrario.
      */
      @Override
-    public boolean insertar(T dato){    
-        
+    public boolean insertar(T dato){
          //Insertarlo como en ABB y con color 0.
-         NodoRN<T> z = new NodoRN<T>(dato, nulo, nulo, nulo);
+         NodoRN<T> z = new NodoRN<T>(dato, nulo, nulo, nulo);//3
          //codigo del PDF
-            NodoRN<T> y = nulo;
-            NodoRN<T> x = (NodoRN<T>) super.getRaiz();
-            while (x!=null && x.getInfo()!=null) {
-                y = x;
-                int compara=((Comparable)z.getInfo()).compareTo(x.getInfo());
-                if (compara<0)
-                    x = x.getIzq();
+            NodoRN<T> y = nulo;//2
+            NodoRN<T> x = (NodoRN<T>) super.getRaiz();//4
+         //hasta que encuentre un hull donde pueda ingresar
+         //log(n)
+            while (x!=null && x.getInfo()!=null) {//4
+                y = x;//1
+                int compara=((Comparable)z.getInfo()).compareTo(x.getInfo());//6
+                if (compara<0)//1
+                    x = x.getIzq();//2
                 else
-                    x = x.getDer();
+                    x = x.getDer();//2
             }
             z.setPadre(y);
             if (y.getInfo() == null)
